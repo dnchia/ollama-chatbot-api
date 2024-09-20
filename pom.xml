@@ -10,9 +10,9 @@
 	</parent>
 
 	<groupId>com.dnchia</groupId>
-	<artifactId>ollama-spring-api</artifactId>
+	<artifactId>ollama-chatbot-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ollama-spring-api</name>
+	<name>ollama-chatbot-api</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 
