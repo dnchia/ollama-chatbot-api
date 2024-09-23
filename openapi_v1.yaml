@@ -1,0 +1,61 @@
+openapi: 3.0.3
+info:
+  title: ollama-chatbot-api
+  description: |-
+    API related to ollama-chatbot-front project.
+    Acts as a wrapper between the application and the model.
+  contact:
+    email: contact@dnchia.com
+  license:
+    name: GNU Affero General Public License
+    url: https://www.gnu.org/licenses/agpl-3.0.en.html
+  version: 1.0.0
+tags:
+  - name: chat
+    description: Chat interactions with Ollama API
+paths:
+  /v1/chat:
+    post:
+      tags:
+        - chat
+      summary: Create a message, sends it to Ollama API and returns the response
+      operationId: findPetsByStatus
+      requestBody:
+        $ref: '#/components/requestBodies/UserQuestionDTO'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V1ChatResponse'
+        '400':
+          description: Bad request
+components:
+  schemas:
+    V1ChatResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        info:
+          type: string
+        content:
+          $ref: '#/components/schemas/MessageDTO'
+    UserQuestion:
+      type: object
+      properties:
+        text_content:
+          type: string
+    MessageDTO:
+      type: object
+      properties:
+        content:
+          type: string
+  requestBodies:
+    UserQuestionDTO:
+      description: Object with all the data according to an user question
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UserQuestion'

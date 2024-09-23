@@ -11,7 +11,7 @@
 
 	<groupId>com.dnchia</groupId>
 	<artifactId>ollama-chatbot-api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<name>ollama-chatbot-api</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>

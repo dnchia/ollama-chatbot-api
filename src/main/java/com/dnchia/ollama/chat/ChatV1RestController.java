@@ -25,7 +25,7 @@ public class ChatV1RestController {
     }
 
     @PostMapping("/question")
-    public StandardResponseDTO<?> makeQuestion(@RequestBody UserQuestionDTO userQuestionDTO, @RequestParam(required = false) Boolean stream) {
+    public StandardResponseDTO<?> makeQuestion(@RequestBody UserQuestionDTO userQuestionDTO) {
         ChatClient.ChatClientRequestSpec userRequest = this.springAIchatClient.prompt().user(userQuestionDTO.getTextContent());
 
         ChatClient.CallResponseSpec response = userRequest.call();
